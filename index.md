@@ -1,37 +1,19 @@
-## Welcome to GitHub Pages
+## JavaScript 作用域
 
-You can use the [editor on GitHub](https://github.com/KipSong/kipsong.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+### 作用域是什么？
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+##### 负责收集并维护由所有声明的标识符(变量)，并实施一套非常严格的规则，确定当前执行的代码对这些标识符的访问权限。
 
-# Header 1
-## Header 2
-### Header 3
+换句话说，就是 [js引擎](src) 执行到当前这个{...}代码区域，可以声明或访问到的标示符（变量）。
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+下面给个例子：
 
-**Bold** and _Italic_ and `Code` text
+![RUNOOB 图标](./img/scope-01.png)
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/KipSong/kipsong.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+    ❶  包含着整个全局作用域，其中只有一个标识符:foo。
+    ❷  包含着 foo 所创建的作用域，其中有三个标识符:a、bar 和 b。   
+    ❸  包含着 bar 所创建的作用域，其中只有一个标识符:c。  
