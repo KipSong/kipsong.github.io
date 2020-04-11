@@ -11,9 +11,20 @@
 
 
 下面给个例子：
-
-![RUNOOB 图标](./img/scope-01.png)
+```javascript
+    //❶作用域
+    function foo(a){
+        //❷作用域  
+        var b = a * 2
+        function bar (c){
+            //❸作用域
+            console.log(a,b,c)
+        }
+        bar(b*2)
+    }
+    foo(2) // 2 4 8
+```
 
     ❶  包含着整个全局作用域，其中只有一个标识符:foo。
-    ❷  包含着 foo 所创建的作用域，其中有三个标识符:a、bar 和 b。   
+    ❷  包含着 foo 所创建的作用域，其中有三个标识符:a、b 和 bar。   
     ❸  包含着 bar 所创建的作用域，其中只有一个标识符:c。  
