@@ -58,9 +58,9 @@ bar(); // 2
 ```
 ###### 无论通过何种手段将内部函数传递到所在的词法作用域以外，它都会持有对原始定义作用域的引用，无论在何处执行这个函数都会使用闭包。
 
-##### 其实哪里都是闭包应用
+### 其实哪里都是闭包应用
 
-###### setTimeout
+#### setTimeout
 ```javascript
 
 function wait(message) {
@@ -73,7 +73,7 @@ wait( "Hello, closure!" );
 这里很多人就感觉懵逼为什么就是了？
 那我们结合什么叫作用域的定义来分析一下，timer函数作用域所引用的message变量是wait作用域里的。引擎执行timer延迟1000ms依然是“Hello, closure!”，而词法作用域在这个过程中保持完整。
 
-###### JQuery
+#### JQuery
 ```javascript
 function setupBot(name, selector) {
   $( selector ).click( function activator() {
@@ -86,13 +86,14 @@ setupBot( "Closure Bot 2", "#bot_2" );
 #### 监听器、 Ajax 请求、跨窗口通信、Web Workers 或者任何其他的异步(或者同步)任务中，只要使 用了回调函数，实际上就是在使用闭包! 
 #### 这个时候再回到上面看定义，什么是闭包。
 
-###### IIFE 模式。通常认为 IIFE 是典型的闭包例子 IIFE是闭包么？
+
+### IIFE 模式。通常认为 IIFE 是典型的闭包例子 IIFE是闭包么？
 ```javascript
 var a = 2;
 (function IIFE() { 
   console.log( a );
 })();
 ```
-###### 这里其实不是，它在定义时所在的作用域中执行(而外部作用域，也就是全局作用域也持有 a)。a 是通过普通的词法作用域查找而非闭包被发现的。
+这里其实不是，它在定义时所在的作用域中执行(而外部作用域，也就是全局作用域也持有 a)。a 是通过普通的词法作用域查找而非闭包被发现的。
 
-### 待续
+## 待续
