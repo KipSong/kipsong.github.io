@@ -58,7 +58,7 @@
   // 我们给上面代码处理一下
   foo();
   function foo() {
-    var a；
+    var a;
     console.log( a ); // undefined
     a = 2;
   }
