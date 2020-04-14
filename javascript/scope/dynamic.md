@@ -4,7 +4,7 @@
 
 ```javascript
 function foo() {
-  console.log( a ); // 
+  console.log( a ); // 2
 }
 function bar() { 
   var a = 3;
