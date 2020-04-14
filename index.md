@@ -1,9 +1,9 @@
 ## JavaScript 知识点
 
-#### 目录
+### 目录
 
-**[第一章《作用域的理解》](./scope/index.md)**<br/>
-**[第二章《变量函数提升》](./promote/index.md)**<br/>
-**[第三章《作用域闭包》](./closure/index1.md)**
-**[《闭包应用（模块）》](./closure/module.md)**
-<br/>
+#### [《JavaScript中的作用域》](./scope/index.md)
+#### [《JavaScript变量函数提升》](./promote/index.md)
+#### [《JavaScript作用域闭包》](./closure/index1.md)
+#### [《JavaScript闭包应用（模块）》](./closure/module.md)
+
