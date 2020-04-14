@@ -95,3 +95,72 @@ kip.say()// My name is kip song, I am  23 years old
 kip.growUp() //我长大1岁了！
 kip.say()// My name is kip song, I am  24 years old
 ```
+
+现代的模块机制：来自《你不知道的javascript》这本书
+
+```javascript
+function kipsong(age){
+    var myself = {
+      name:"kip song",
+      age:age,
+      say:say,
+      growUp:growUp
+    }
+    function say(){
+      console.log("My name is " + myself.name + ", I am " + myself.age + " years old")
+    }
+    function growUp(){
+      myself.age +=1
+    }
+    return myself
+}
+
+var kip = kipsong(23)
+kip.say()// My name is kip song, I am  23 years old
+kip.growUp() //我长大1岁了！
+kip.say()// My name is kip song, I am  24 years old
+```
+
+大多数模块依赖加载器 / 管理器本质上都是将这种模块定义封装进一个友好的 API
+```javascript
+var Mymodules = (function(){
+    var _modules = {};
+    function define(name,deps,impl){
+      for(var i=0; i<deps.length; i++){
+        deps[i] = _modules[deps[i]]
+      }
+      _modules[name] = impl.apply(impl,deps)
+    }
+    function get(name){
+        return _modules[name];
+    }
+    return {
+      define:define,
+      get:get
+    }
+})()
+
+Mymodules.define("action",[],function(){
+  var action = {
+    eat: function(){
+      return "eat something"
+    },
+    play:function(){
+       return "play something"
+    }
+  }
+  return action
+})
+
+Mymodules.define("person",["action"],function(action){
+  var person = {
+    doSomething:function(name){
+      console.log("My name is " + name + ', I can ' + action.eat() + ' and ' + action.play() )
+    }
+  }
+  return person
+})
+
+var person = Mymodules.get("person")
+person.doSomething("Kip Song")
+```
