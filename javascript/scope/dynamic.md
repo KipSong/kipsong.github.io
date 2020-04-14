@@ -1,6 +1,7 @@
 ## JavaScript 动态作用域
 
 ### 动态作用域就是这个
+
 ```javascript
 function foo() {
   console.log( a ); // 2
@@ -12,7 +13,10 @@ function bar() {
 var a = 2;
 bar();
 ```
-很多人就不明白了，根据上面所讲的“词法作用域”到这里怎么感觉不对了呀。不应该是 3 吗？
+
+很多人就不明白了，根据上面所讲的“词法作用域”到这里怎么感觉不对了呀。
+不应该是 3 吗 
+
 
 ### 再回去一趟 我们聊聊词法作用域
 
@@ -28,6 +32,21 @@ var a = 2;
 bar();
 ```
 在这里我们都知道是 3。
+
+
+### 其实很多人都写过Vue项目，看代码
+```javascript
+methods = {
+  handleClick(){
+    console.log(name) // 没找到呗
+  },
+  handleOption(){
+    var name = "option"
+    this.handleClick()
+  }
+}
+```
+你又懂了！！！
 
 
 ## 解释一下

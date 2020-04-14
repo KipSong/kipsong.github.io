@@ -6,5 +6,5 @@
 #### [《JavaScript中动态作用域》](./javascript/scope/dynamic.md)
 #### [《JavaScript变量函数提升》](./javascript/promote/index.md)
 #### [《JavaScript作用域闭包》](./javascript/closure/index.md)
-#### [《JavaScript闭包应(模块)》](./javascript/closure/module.md)
+#### [《JavaScript闭包应用(模块)》](./javascript/closure/module.md)
 
