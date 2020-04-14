@@ -1,10 +1,10 @@
 ## JavaScript 动态作用域
 
-### 动态作用域就是这个
+### 下面代码看看什么叫做动态
 
 ```javascript
 function foo() {
-  console.log( a ); // 2
+  console.log( a ); // 
 }
 function bar() { 
   var a = 3;
@@ -46,7 +46,7 @@ methods = {
   }
 }
 ```
-你又懂了！！！
+你又懂了！！！vue项目你一看就知道 name 是找不到 option的！！！
 
 
 ## 解释一下
